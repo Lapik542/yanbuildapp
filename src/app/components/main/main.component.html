@@ -11,21 +11,21 @@
         <!-- NAV -->
         <nav class="nav-item">
           <ul class="list">
-            <li class="list-item"><a class="link-item" href="#header">Home</a></li>
+            <li class="list-item"><a class="link-item" (click)="scrollToTop()">Home</a></li>
             <li class="list-item">
-              <a class="link-item" href="#gallery">Projects</a>
+              <a class="link-item" (click)="scrollToSection('gallery')">Projects</a>
             </li>
             <li class="list-item">
-              <a class="link-item" href="#gallery">Gallery</a>
+              <a class="link-item" (click)="scrollToSection('gallery')">Gallery</a>
             </li>
             <li class="list-item">
-              <a class="link-item" href="#services">Services</a>
+              <a class="link-item" (click)="scrollToSection('services')">Services</a>
             </li>
             <li class="list-item">
-              <a class="link-item" href="#why-would-you-choose-us">Why Us</a>
+              <a class="link-item" (click)="scrollToSection('why-would-you-choose-us')">Why Us</a>
             </li>
             <li class="list-item">
-              <a class="link-item" href="#reviews">Write a Review</a>
+              <a class="link-item" (click)="scrollToSection('reviews')">Write a Review</a>
             </li>
             <li class="list-item">
               <button [routerLink]="['/quote-form']" class="btn-header">Get a Quote</button>
@@ -205,11 +205,127 @@
             <button [routerLink]="['/quote-form']" class="button-gallery-text">Get a quote</button>
           </div>
         </div>
+        <div class="accordion-see-mode-gallery" [ngClass]="{'active': isOpenAccardion}">
+          <!-- GALLERY SEE MORE -->
+          <div>
+            <ul class="list-gallery-item list-gallery-item-see-more">
+              <li><img src="../../../assets/gallery/gallery14.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery15.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery16.jpg" alt="" /></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="gallery-img">
+              <li><img src="../../../assets/gallery/gallery17.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery18.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery19.jpg" alt="" /></li>
+            </ul>
+          </div>
+          <div class="gallery-text-image-button">
+            <div class="gallery-text-button">
+              <div>
+                <ul class="gallery-image-bottom">
+                  <li>
+                    <img src="../../../assets/gallery/gallery20.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery21.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery22.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery23.jpg" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <ul class="list-gallery-item list-gallery-item-see-more">
+              <li><img src="../../../assets/gallery/gallery24.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery25.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery26.jpg" alt="" /></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="gallery-img">
+              <li><img src="../../../assets/gallery/gallery27.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery28.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery29.jpg" alt="" /></li>
+            </ul>
+          </div>
+          <div class="gallery-text-image-button">
+            <div class="gallery-text-button">
+              <div>
+                <ul class="gallery-image-bottom">
+                  <li>
+                    <img src="../../../assets/gallery/gallery30.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery31.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery32.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery33.jpg" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <ul class="list-gallery-item list-gallery-item-see-more">
+              <li><img src="../../../assets/gallery/gallery34.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery35.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery36.jpg" alt="" /></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="gallery-img">
+              <li><img src="../../../assets/gallery/gallery37.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery38.jpg" alt="" /></li>
+              <li><img src="../../../assets/gallery/gallery39.jpg" alt="" /></li>
+            </ul>
+          </div>
+          <div class="gallery-text-image-button">
+            <div class="gallery-text-button">
+              <div>
+                <ul class="gallery-image-bottom">
+                  <li>
+                    <img src="../../../assets/gallery/gallery40.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery41.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery42.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery43.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/gallery/gallery44.jpg" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-see-more" (click)="toggleAccardion()">
+          <p class="text-see-more">
+            <span>
+              SEE MORE               
+            </span>
+            <img class="svg-icon-circle-arrow-up-solid" [ngClass]="{'active': isOpenAccardion}" src="assets/svg/arrow-down.svg" alt="" width="32" height="32">
+          </p>
+        </div>
       </div>
     </div>
   </section>
   <!-- GALLERY-MOBILE -->
-  <section *ngIf="isMobile" class="section-mobile-gallery">
+  <section *ngIf="isMobile" class="section-mobile-gallery" id="gallery-mobile">
     <div class="mobile-gallery">
       <div>
         <ul id="gallery-mobile" class="mobile-project-gallery-list-inst-yan">
@@ -351,19 +467,278 @@
               height="173px"
             />
           </li>
-          <li>
-            <p class="mobile-gallery-p-img">
-              Using our accumulated experience in the field of laying ceramic
-              tiles, porcelain stoneware, natural stone, installing wooden
-              floors and floor coverings, we will be able to bring the most
-              interesting design solutions into reality. The company's
-              specialists will help you select and combine facing materials for
-              your premises. The YanBuild company guarantees you a good mood
-              after working with our specialists.
-            </p>
-          </li>
-          <li><button [routerLink]="['/quote-form']" class="mobile-gallery-btn">Get a Quote</button></li>
+          <div class="mobile-gallery-img mobile-gallery-img-accordion" [class.active]="isOpenAccardion" >
+            <li>
+              <img
+                src="../../../assets/gallery/gallery14.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery15.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery16.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery17.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery18.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery19.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery20.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery21.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery22.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery23.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery24.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery25.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                class="mobile-img-last"
+                src="../../../assets/gallery/gallery26.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery27.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery28.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery29.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery30.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery31.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery32.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery33.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery34.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery35.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery36.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery37.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery38.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                class="mobile-img-last"
+                src="../../../assets/gallery/gallery39.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery40.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery41.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery42.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                src="../../../assets/gallery/gallery43.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+            <li>
+              <img
+                class="mobile-img-last"
+                src="../../../assets/gallery/gallery44.jpg"
+                alt=""
+                width="173px"
+                height="173px"
+              />
+            </li>
+          </div>
         </ul>
+        <div class="gallery-see-more" (click)="toggleAccardion()">
+          <p class="text-see-more">
+            <span>
+              SEE MORE               
+            </span>
+            <img class="svg-icon-circle-arrow-up-solid" [ngClass]="{'active': isOpenAccardion}" src="assets/svg/arrow-down.svg" alt="" width="32" height="32">
+          </p>
+        </div>
+        <p class="mobile-gallery-p-img">
+          Using our accumulated experience in the field of laying ceramic
+          tiles, porcelain stoneware, natural stone, installing wooden
+          floors and floor coverings, we will be able to bring the most
+          interesting design solutions into reality. The company's
+          specialists will help you select and combine facing materials for
+          your premises. The YanBuild company guarantees you a good mood
+          after working with our specialists.
+        </p>
+        <button [routerLink]="['/quote-form']" class="mobile-gallery-btn">Get a Quote</button>
       </div>
     </div>
   </section>
@@ -400,14 +775,33 @@
                     • Residential tile installation
                   </li>
                   <li class="text-list-svg-icon">
-                    • Installation of ceramic tiles
+                    • Installation of natural stone tiles
                   </li>
-                  <li class="text-list-svg-icon">• Installation of Lamnate</li>
                   <li class="text-list-svg-icon">
-                    • Installation of engineering board
+                    • Marbel installation
+                  <li class="text-list-svg-icon">
+                    • Ceramic tile installation
                   </li>
-                  <li class="text-list-svg-icon">• Harwood installation</li>
-                  <li class="text-list-svg-icon">• Lvp installation</li>
+                  <li class="text-list-svg-icon">
+                    • Installation of porcelain tiles
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Mosaic installation
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Installation of large-sized tiles
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Granite installation
+                  <li class="text-list-svg-icon">
+                    • Installation of shower systems
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Installation of shower pans
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Installation of niches and seats
+                  </li>
                 </ul>
               </div>
             </li>
@@ -424,22 +818,39 @@
                 </svg>
                 <p class="title-list-svg-icon">Special Skills</p>
                 <ul class="list-text-svg-icon">
-                  <li class="text-list-svg-icon">• Bullnose installation</li>
-                  <li class="text-list-svg-icon">• Schluter installation</li>
                   <li class="text-list-svg-icon">
-                    • Installation of heated floors
+                    • Schluter system installation of varying complexity
                   </li>
                   <li class="text-list-svg-icon">
-                    • Installation of decorative tiles
+                    • Installation of bullnoses of various sizes and complexity
                   </li>
                   <li class="text-list-svg-icon">
-                    • Installation of granite niches and thresholds
+                    • Setting a 45-degree angle for the tiles
                   </li>
-                  <li class="text-list-svg-icon">• Limestone</li>
                   <li class="text-list-svg-icon">
-                    • Installation of wooden steps and thresholds
+                    • Sealer installation
                   </li>
-                  <li class="text-list-svg-icon">• Thresholds</li>
+                  <li class="text-list-svg-icon">
+                    • Installation of various shower systems
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Waterproofing installation
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Installation of electric underfloor heating
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Builder-ready scheduling & phase coordination
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Fast turnaround for production homes
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Clean-site policy & dust control
+                  </li>
+                  <li class="text-list-svg-icon">
+                    • Photo documentation for inspections
+                  </li>
                 </ul>
               </div>
             </li>
@@ -481,80 +892,6 @@
             the completion of the project.
           </p>
         </div>
-      </div>
-      <div class="line-why-would-you-choose-us"></div>
-      <div>
-        <ul class="list-why-would-you-choose-us">
-          <li class="list-svg-why-would-you-choose-us-arrow">
-            <div class="list-svg-why-would-you-choose-us">
-              <svg
-                width="54px"
-                height="54px"
-                class="svg-icon-circle-arrow-up-solid"
-              >
-                <use
-                  href="../../../assets/svg/icon.svg#icon-circle-arrow-up-solid"
-                ></use>
-              </svg>
-            </div>
-            <ul class="list-why-would-you-choose-us-title">
-              <li class="text-list-why-would-you-choose-us">
-                • Residential tile installation
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Installation of engineering board
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Lvp installation
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Harwood installation
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Installation of ceramic tiles
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Installation of porcelain tiles
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Under Board Installation
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Installation of lamnate
-              </li>
-            </ul>
-          </li>
-          <li class="list-svg-why-would-you-choose-us-arrow">
-            <div class="list-svg-why-would-you-choose-us">
-              <svg
-                width="54px"
-                height="54px"
-                class="svg-icon-circle-arrow-up-solid"
-              >
-                <use
-                  href="../../../assets/svg/icon.svg#icon-circle-arrow-up-solid"
-                ></use>
-              </svg>
-            </div>
-            <ul class="list-why-would-you-choose-us-title">
-              <li class="text-list-why-would-you-choose-us">
-                • Parquet installation
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Harwood installation
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Installation of vinyl flooring
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Installation of engineering board
-              </li>
-              <li class="text-list-why-would-you-choose-us">
-                • Installation of rubber coating
-              </li>
-            </ul>
-          </li>
-        </ul>
       </div>
     </div>
   </section>
@@ -658,12 +995,12 @@
       <li>
         <ul class="footer-navigation-list">
           <h3 class="footer-title-navigation">Navigation</h3>
-          <li class="footer-info-navigation-title">Our Projects</li>
-          <li class="footer-info-navigation-title">Projects Library</li>
-          <li class="footer-info-navigation-title">Services We Provide</li>
-          <li class="footer-info-navigation-title">Why Choose Us</li>
-          <li class="footer-info-navigation-title">Reviews</li>
-          <button class="footer-btn-info-navigation-title">Get a Quote</button>
+          <li class="footer-info-navigation-title" (click)="scrollToSection('gallery')">Our Projects</li>
+          <li class="footer-info-navigation-title" (click)="scrollToSection('gallery')">Projects Library</li>
+          <li class="footer-info-navigation-title" (click)="scrollToSection('services')">Services We Provide</li>
+          <li class="footer-info-navigation-title" (click)="scrollToSection('why-would-you-choose-us')">Why Choose Us</li>
+          <li class="footer-info-navigation-title" (click)="scrollToSection('reviews')">Reviews</li>
+          <button class="footer-btn-info-navigation-title" [routerLink]="['/quote-form']">Get a Quote</button>
         </ul>
       </li>
       <li>
@@ -699,11 +1036,11 @@
       </li>
     </ul>
 
-    <button class="mobile-btn-footer">Get a Quote</button>
+    <button class="mobile-btn-footer" [routerLink]="['/quote-form']">Get a Quote</button>
 
     <div class="footer-block-text-button">
       <p class="footer-info-text-revy">
-        Copyright © 2008-2023 YanBuild, LLC. All Rights Reserved
+        Copyright © 2008-2026 YanBuild, LLC. All Rights Reserved
       </p>
       <button class="footer-info-button-revy" (click)="scrollToTop()">
         <svg width="15px" height="20px">

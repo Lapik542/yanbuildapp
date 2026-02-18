@@ -9,6 +9,7 @@ export class MainComponent {
 title = 'app';
   isMobile: boolean;
   isOpen: boolean = false;
+  isOpenAccardion: boolean = false;
 
   constructor() {
     this.checkScreenSize();
@@ -43,5 +44,20 @@ title = 'app';
   }
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  toggleAccardion() {
+    this.isOpenAccardion = !this.isOpenAccardion;
+
+    if(this.isOpenAccardion === false) {
+      this.scrollToSection('gallery');
+      this.scrollToSection('gallery-mobile');
+    }
   }
 }
