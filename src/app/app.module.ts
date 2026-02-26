@@ -13,9 +13,6 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
 import { TextMaskModule } from 'angular2-text-mask';
 
-import { NgxQrcodeStylingModule } from 'ngx-qrcode-styling';
-
-
 import {NgxPopperjsModule} from 'ngx-popperjs';
 import { register } from 'swiper/element/bundle';
 

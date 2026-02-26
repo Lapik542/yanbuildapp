@@ -1447,6 +1447,7 @@ body {
     justify-content: start;
     align-items: start;
     margin-bottom: 60px;
+    padding: 0 24px;
   }
   .title-services-we-provide {
     width: 257px;
@@ -1480,6 +1481,9 @@ body {
     gap: 14px;
     margin-top: 34px;
   }
+  .list-text-svg-icon {
+    align-items: center;
+  }
   .button-services-we-provide-get {
     font-size: 15px;
     width: 173px;
@@ -1501,6 +1505,11 @@ body {
     width: 24px !important;
     height: 24px !important;
   }
+  .buttons-services-we-provide {
+    margin: 0 auto;
+    gap: 14px;
+    margin-top: 34px;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 392px) {
@@ -1517,6 +1526,7 @@ body {
     justify-content: start;
     align-items: start;
     margin-bottom: 40px;
+    padding: 0 12px;
   }
   .title-services-we-provide {
     width: 250px;
@@ -1551,6 +1561,8 @@ body {
     font-size: 14px;
   }
   .list-text-svg-icon {
+    align-items: center;
+    text-align: center;
     gap: 8px;
   }
   .line-services-we-provide {
@@ -2209,6 +2221,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 24px;
   }
   .let’s-work-together-img {
     width: 361px;
